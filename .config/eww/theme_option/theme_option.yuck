@@ -1,0 +1,25 @@
+(defwidget option_list []
+  (box :class "option_bg"
+       :orientation "v"
+       :space-evenly true
+       :spacing 20
+    (button :class "light-mode"
+            :onclick "eww close theme_option && ~/.config/hypr/scripts/change_theme/theme.sh light"
+      (label :text "󰃞 Light Theme" :class "content")
+    )
+    (button :class "dark-mode"
+            :onclick "eww close theme_option && ~/.config/hypr/scripts/change_theme/theme.sh dark"
+      (label :text "󰤄 Dark Theme" :class "content")
+    )
+  )
+)
+
+(defwindow theme_option
+  :monitor 0
+  :geometry (geometry :x "0px"
+                      :y "0px"
+                      :width "480px"
+                      :height "150px"
+                      :anchor "center")
+  :wm-ignore true
+(option_list))

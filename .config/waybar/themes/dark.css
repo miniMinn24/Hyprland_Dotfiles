@@ -1,0 +1,10 @@
+@define-color fg rgba(255, 255, 255, 1);
+@define-color fg2 rgba(0, 8, 28, 1);
+@define-color bg rgba(0, 8, 28, 0.8);
+@define-color hover rgba(255, 255, 255, 0.1);
+@define-color workspaceunactive rgba(255, 255, 255, 0.1);
+@define-color workspaceactive rgba(255, 255, 255, 0.9);
+@define-color workspaceborder rgba(255, 255, 255, 0.7);
+@define-color workspaceactivehover rgba(255, 255, 255, 0.7);
+@define-color workspacehover rgba(255, 255, 255, 0.2);
+@define-color urgent rgba(0, 153, 255, 1);

@@ -1,0 +1,24 @@
+.option_bg {
+  background-color: $optbg;
+  color: $fg;
+  padding: 20px;
+  font-family: Metropolis Medium;
+  font-size: 24px;
+  border-radius: 14px;
+  button {
+    border-radius: 6px;
+    transition: all ease .2s;
+    &:hover { background-color: $bgSecondary; }
+    &:active { background-color: $bg; }
+    .content {
+      border-radius: 4px;
+      padding: 0px 15px 0px 5px;
+    }
+  }
+  .light-mode { color: black; background-color: $optlightbg }
+  .dark-mode { color: white; background-color: $optdarkbg }
+  .light-mode:hover { color: #0099ff; background-color: $optlightbghover }
+  .dark-mode:hover { color: #0099ff; background-color: $optdarkbghover }
+  .light-mode:active { color: white; background-color: $optlightbg }
+  .dark-mode:active { color: #0099ff; background-color: $optdarkbg }
+}

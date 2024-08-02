@@ -1,0 +1,38 @@
+(defwidget volume []
+  (box :class "controlsbox"
+       :orientation "v"
+       :space-evenly false
+       :spacing 10
+    (box :orientation "h"
+         :space-evenly "false"
+         :class "volume-slider"
+      (box :class "volume-label"
+            volume_icon
+      )
+      (scale :value volume_value
+             :onchange "~/.config/eww/scripts/volume.sh set {}"
+             :min 0
+             :max 101)
+    )
+  )
+)
+
+(defwidget volume_widget_bar []
+  (box :class "volume_widget_bar"
+       :orientation "v"
+       :space-evenly false
+       :spacing 20
+    (volume)
+  )
+)
+
+(defwindow volume_bar
+  :monitor 0
+  :geometry (geometry :x "10px"
+                      :y "10px"
+                      :width "340px" 
+                      :height "60px"
+                      :anchor "top center")
+  :type "widget"
+  :wm-ignore true
+(volume_widget_bar))

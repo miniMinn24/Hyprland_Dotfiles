@@ -1,0 +1,53 @@
+$darkbg: #0b0d16;
+$bgheader: rgb(7, 17, 47);
+$bg: rgba(255, 255, 255, 1);
+$bgCalendar: rgba(255, 255, 255, 1);
+$bgchart: rgb(228, 228, 228);
+$bgsoft: rgba(205, 205, 205, 0.6);
+$bgsoftbutton: rgb(190, 190, 190);
+$bgsoftbuttonhover: rgb(160, 160, 160);
+$contrastbg: #0f111a;
+$bgSecondary: #11131c;
+$bgSecondaryAlt: #a5b6cf;
+$fg: rgb(0, 8, 28);
+$fgfade: rgba(50, 50, 50, 0.638);
+$fgDim: #a5b6cf;
+$watermelon: #dd6777;
+$buttonactive: rgb(255, 255, 255);
+
+// for theme chosing option
+$optbg: rgba(255, 255, 255, 0.9);
+$optlightbg: rgb(210, 210, 210);
+$optlightbghover: rgb(227, 227, 227);
+$optdarkbg: rgb(0, 18, 62);
+$optdarkbghover: rgb(0, 15, 53);
+
+// Aliases
+$background: $bg;
+$backgroundSecondary: $bgSecondary;
+$backgroundSecondaryAlt: $bgSecondaryAlt;
+$foreground: $fg;
+$foregroundDim: $fgDim;
+
+$black: #151720;
+$dimblack: #1a1c25;
+$lightblack: #262831;
+$fadeblack: #979797;
+$red: #dd6777;
+$blue: #0099ff;
+$fadeblue: #0076c4;
+$lightblue: #418fc4;
+$thinblue: #609dff;
+$thinbluegradient: #60d2ff;
+$thinbluegradient2: #7860ff;
+$cyan: #93cee9;
+$blue-desaturated: #93cee9;
+$magenta: #c296eb;
+$purple: #c296eb;
+$green: #90ceaa;
+$aquamarine: #90ceaa;
+$yellow: #ecd3a0;
+$accent: $blue;
+$javacafeMagenta: #c296eb;
+$javacafeBlue: #86aaec;
+$white: rgb(0, 8, 28);

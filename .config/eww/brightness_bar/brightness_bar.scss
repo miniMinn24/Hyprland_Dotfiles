@@ -1,0 +1,38 @@
+.br_widget_bar {
+    background-color: $bg;
+    color: $fg;
+    font-family: Product Sans;
+    padding: 10px 18px;
+    border-radius: 14px;
+  }
+  
+  .controlsbox {
+    background-color: transparent;
+    border-radius: 7px;
+    padding: 7px 12px;
+  
+    .brightness-slider {
+      .brightness-label {
+        font-size: 20px;
+        font-family: Iosevka Nerd Font;
+        margin-right: 15px;
+        color: $fg;
+      }
+      & scale trough {
+        all: unset;
+        border-radius: 10px;
+        background-color: $bgsoft;
+        border: none;
+        min-height: 8px;
+        min-width: 240px;
+        margin-left: 3px;
+        & highlight {
+          all: unset;
+          background: $blue;
+          color: #000000;
+          border-radius: 10px;
+        }
+      }
+    }
+  }
+  

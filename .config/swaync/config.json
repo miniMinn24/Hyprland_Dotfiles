@@ -1,0 +1,128 @@
+{
+  "$schema": "/etc/xdg/swaync/configSchema.json",
+  "positionX": "right",
+  "positionY": "top",
+  "control-center-margin-top": 0,
+  "control-center-margin-bottom": 0,
+  "control-center-margin-right": 0,
+  "control-center-margin-left": 0,
+  "notification-icon-size": 64,
+  "notification-body-image-height": 100,
+  "notification-body-image-width": 200,
+  "timeout": 6,
+  "timeout-low": 5,
+  "timeout-critical": 6,
+  "fit-to-screen": true,
+  "control-center-width": 400,
+  "control-center-height": 300,
+  "notification-window-width": 360,
+  "keyboard-shortcuts": true,
+  "image-visibility": "when-available",
+  "transition-time": 200,
+  "hide-on-clear": false,
+  "hide-on-action": false,
+  "script-fail-notify": true,
+  "scripts": {
+    "example-script": {
+      "exec": "echo 'Do something...'",
+      "urgency": "Normal"
+    }
+  },
+  "notification-visibility": {
+    "example-name": {
+      "state": "muted",
+      "urgency": "Low",
+      "app-name": "Spotify"
+    }
+  },
+  "widgets": [
+    "title", /*
+    "buttons-grid",
+    "backlight#KB",
+    "volume",
+    "backlight",
+    "mpris",
+    "menubar#label", 
+    "dnd", */
+    "notifications"
+  ],
+  "widget-config": {
+    "title": {
+      "text": "Notification",
+      "clear-all-button": true,
+      "button-text": " Clear all"
+    },
+    "dnd": {
+      "text": "Do Not Disturb"
+    },
+    "label": {
+      "max-lines": 1,
+      "text": "Controll Center"
+    },
+    "mpris": {
+      "image-size": 96,
+      "image-radius": 12
+    },
+    "backlight": {
+      "label": "󰖨 ",
+      "device": "intel_backlight",
+      "min": 5
+    },
+    "backlight#KB": {
+      "label": " ",
+      "device": "asus::kbd_backlight",
+      "subsystem": "leds"
+    },
+    "volume": {
+      "label": "󰕾 "
+    },
+    "menubar#label": {
+      "menu#power-buttons": {
+        "label": "", 
+        "position": "right"
+      },
+      "menu#custom-label1": {
+        "label": "Control Center", 
+        "position": "left"
+      }
+    },
+    "buttons-grid": {
+      "actions": [
+        {
+          "label": "󰤨",
+          "command": "sh /home/miniminn/.config/hypr/scripts/wifionoff.sh",
+          "type": "toggle",
+          "update-command": "sh -c '[[ $(nmcli radio wifi) == \"enabled\" ]] && echo true || echo false'"
+        },
+        {
+          "label": "󰍶",
+          "command": "swaync-client -d -sw",
+          "type": "toggle"
+        },
+        {
+          "label": "󰃝",
+          "command": "sh /home/miniminn/.config/hypr/scripts/nighteye.sh",
+          "type": "toggle",
+          "update-command": ""
+        },
+        {
+          "label": "󰌪",
+          "command": "",
+          "type": "toggle",
+          "update-command": ""
+        },
+        {
+          "label": "󰆞",
+          "command": "sh /home/miniminn/.config/hypr/scripts/screenshotnoswaync.sh",
+          "type": "normal"
+        },
+        {
+          "label": "󰍺",
+          "command": "nwg-displays",
+          "type": "normal",
+          "update-command": "swaync-client -cp"
+        }
+      ]
+    }
+  }
+}

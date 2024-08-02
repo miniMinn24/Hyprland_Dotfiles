@@ -1,0 +1,36 @@
+{
+    "label" : "lock",
+    "action" : "$HOME/.config/hypr/scripts/wlogoutsh/lock.sh",
+    "text" : "",
+    "keybind" : "l"
+}
+{
+    "label" : "hibernate",
+    "action" : "sleep 1; systemctl hibernate",
+    "text" : "",
+    "keybind" : "h"
+}
+{
+    "label" : "logout",
+    "action" : "hyprctl dispatch exit",
+    "text" : "",
+    "keybind" : "e"
+}
+{
+    "label" : "shutdown",
+    "action" : "systemctl poweroff",
+    "text" : "",
+    "keybind" : "s"
+}
+{
+    "label" : "suspend",
+    "action" : "$HOME/dotfiles/hypr/scripts/suspend.sh",
+    "text" : "",
+    "keybind" : "u"
+}
+{
+    "label" : "reboot",
+    "action" : "systemctl reboot",
+    "text" : "",
+    "keybind" : "r"
+}

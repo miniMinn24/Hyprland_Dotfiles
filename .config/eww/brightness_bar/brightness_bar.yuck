@@ -1,0 +1,38 @@
+(defwidget brightness []
+  (box :class "controlsbox"
+       :orientation "v"
+       :space-evenly false
+       :spacing 10
+    (box :orientation "h"
+         :space-evenly "false"
+         :class "brightness-slider"
+    (box :class "brightness-label"
+            br_icon
+    )
+      (scale :value br
+             :onchange "~/.config/eww/scripts/brightness.sh set {}"
+             :min 0
+             :max 101)
+    )
+  )
+)
+
+(defwidget br_widget_bar []
+  (box :class "br_widget_bar"
+       :orientation "v"
+       :space-evenly false
+       :spacing 20
+    (brightness)
+  )
+)
+
+(defwindow brightness_bar
+  :monitor 0
+  :geometry (geometry :x "10px"
+                      :y "10px"
+                      :width "340px"
+                      :height "60px"
+                      :anchor "top center")
+  :type "dock"
+  :wm-ignore true
+(br_widget_bar))

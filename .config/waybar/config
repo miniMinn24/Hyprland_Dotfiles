@@ -1,0 +1,153 @@
+{
+  "layer": "top",
+  "position": "top",
+    "modules-left": ["custom/logo", "custom/search", "custom/display", "custom/theme", "hyprland/workspaces"],
+    "modules-center": ["hyprland/window"],
+    "modules-right": ["tray", "custom/lang", "backlight", "pulseaudio", "network", "battery", "clock", "custom/control"],
+
+  "hyprland/window": {
+    "format": "<b>{initialClass}</b>",
+    "max-length": 16,
+    "separate-outputs": true
+    },
+
+  "custom/logo": {
+    "format": "󰣇",
+    "tooltip": true,
+    "tooltip-format": "Power Options",
+    "on-click": "~/.config/hypr/scripts/launch_apps/launch_wlogout.sh"
+  },
+
+  "custom/search": {
+    "format": "Search",
+    "tooltip": true,
+    "tooltip-format": "Launch Apps",
+    "on-click": "~/.config/hypr/scripts/launch_apps/launch_wofi.sh"
+  },
+
+  "custom/display": {
+    "format": "Display",
+    "tooltip": true,
+    "tooltip-format": "Configure Monitors",
+    "on-click": "~/.config/hypr/scripts/launch_apps/launch_nwg_displays.sh"
+  },
+
+  "custom/theme": {
+    "format": "Theme",
+    "tooltip": true,
+    "tooltip-format": "Customize Looks",
+    "on-click": "~/.config/hypr/scripts/launch_apps/launch_theme_changer.sh",
+    "on-click-right": "~/.config/hypr/scripts/launch_apps/launch_waypaper.sh"
+  },
+
+  "hyprland/workspaces": {
+    "format": "{icon}",
+    "tooltip": false,
+    "all-outputs": true,
+    "sort-by-number": true,
+    "disable-scroll": false,
+    "on-scroll-up": "hyprctl dispatch workspace +1",
+    "on-scroll-down": "hyprctl dispatch workspace -1",
+    "active-only": false
+  },
+
+  "clock": {
+    "tooltip": true,
+    "tooltip-format": "Notification Center",
+    "format": "{:%a %b %d  %I:%M %p}",
+    "on-click-right": "swaync-client -t -sw",
+    "return-type": "json",
+    "exec-if": "which swaync-client",
+    "exec": "swaync-client -swb",
+    "on-click": "eww -c ~/.config/eww open --toggle date",
+    "escape": true
+  },
+
+  "tray": {
+    "format": "{icon}",
+    "tooltip": true,
+    "icon-size": 16,
+    "spacing": 6
+  },
+    
+  "custom/lang": {
+    "exec": "~/.config/hypr/scripts/layout.sh",
+    "on-click": "~/.config/hypr/scripts/keyboard.sh",
+    "tooltip": true,
+    "tooltip-format": "Current keyboard",
+    "interval": 1
+  },
+
+  "backlight": {
+    "device": "intel_backlight",
+    "format": "<span font_size='large'>{icon}</span>",
+    "format-icons": ["󰖨"],
+    "tooltip": true,
+    "scroll-step": 5,
+    "tooltip-format": "Brightness: {percent}%"
+  },
+
+  "pulseaudio": {
+    "format": "<span font_size='large'>{icon}</span>",
+    "format-muted": "<span font_size='large'>󰣽</span>",
+    "tooltip": true,
+    "tooltip-format": "Volume: {volume}%",
+    "format-icons": {
+    "headphone": "󰋋",
+    "default": ["󰣾", "󰣴", "󰣶", "󰣸", "󰣺"]
+    },
+    "scroll-step": 5,
+    "on-click": "~/.config/hypr/scripts/mute.sh"
+  },
+
+  "network": {
+    "format": "<span font_size='large'>{icon}</span>",
+    "format-icons": {
+      "wifi": ["󰤨"],
+      "default": ["󰤮"],
+      "disconnected": ["󰤮"],
+      "format-ethernet": ["󰚇"]
+    },
+    "interface": "wlan0",
+    "tooltip": true,
+    "tooltip-format": "{essid}",
+    "interval": 1
+  },
+
+  "battery": {
+    "format": "<span font_size='large'>{icon}</span>",
+    "format-icons": {
+      "default": ["󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
+      "charging": ["󰂆", "󰂇", "󰂈", "󰂉", "󰂊", "󰂋"],
+      "plugged": ["󰂆", "󰂇", "󰂈", "󰂉", "󰂊", "󰂋"]
+    },
+    "format-full": "<span font_size='large'>󰂄</span>",
+    "tooltip": true,
+    "tooltip-format": "Battery: {capacity}%",
+    "interval": 2,
+    "states": {
+      "warning": 30,
+      "critical": 15
+    }
+  },
+
+  "custom/control": {
+    "format": "<span font_size='large'>󰙀</span>",
+    "tooltip": true,
+    "tooltip-format": "Control Widgets",
+    "on-click": "eww -c ~/.config/eww open --toggle actions",
+    "on-click-right": "eww -c ~/.config/eww open --toggle dashboard"
+  },
+
+  "power-profiles-daemon": {
+    "format": "{icon}",
+    "tooltip-format": "Power profile: {profile}\nDriver: {driver}",
+    "tooltip": true,
+    "format-icons": {
+      "default": "",
+      "performance": "",
+      "balanced": "",
+      "power-saver": ""
+    }   
+  }
+}

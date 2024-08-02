@@ -1,0 +1,415 @@
+/*
+ ____                                
+/ ___|_      ____ _ _   _ _ __   ___ 
+\___ \ \ /\ / / _` | | | | '_ \ / __|
+ ___) \ V  V / (_| | |_| | | | | (__ 
+|____/ \_/\_/ \__,_|\__, |_| |_|\___|
+                    |___/ By miniMinn           
+ */
+
+ @import "themes/dark.css";
+ 
+ *{
+   color: @noti-fg;
+   font-family: "JetBrainsMono Nerd Font Propo Bold";
+ }
+
+
+ 
+ .notification-row {
+   outline: none;
+ }
+ 
+ .notification-row:focus,
+ .notification-row:hover {
+   background: rgba(46, 58, 85, 0.6);
+ }
+ 
+ .notification {
+   border-radius: 12px;
+   margin: 0px 0px;
+   box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.3);
+   padding: 0px;
+   border: none;
+   background: @noti-normal;
+ }
+
+ scale trough {
+  margin: 0rem;
+  background-color: rgba(46, 60, 90, 0.8);
+  border-radius: 30px;
+  min-height: 14px;
+  min-width: 70px;
+}
+
+trough highlight {
+  background: #5f9fff;
+  border-radius: 30px;
+}
+
+ /* Uncomment to enable specific urgency colors */
+  .low {
+    border-radius: 12px;
+   margin: 0px 0px;
+   box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.3);
+   padding: 0px;
+   border: none;
+   background: @noti-bg;
+ }/*
+ .normal {
+   background: green;
+   padding: 6px;
+   border-radius: 12px;
+ } */
+ 
+ .critical {
+   border-radius: 12px;
+   margin: 0px 0px;
+   box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.3);
+   padding: 0px;
+   border: none;
+   background: @noti-bg;
+ }
+ 
+ 
+ .notification-content {
+   background: @noti-content;
+   padding: 10px 14px;
+   border-radius: 8px;
+ }
+ 
+ .close-button {
+   background: @noti-close-bg;
+   color: white;
+   text-shadow: none;
+   padding: 0;
+   border-radius: 100%;
+   margin-top: 6px;
+   margin-right: 6px;
+   box-shadow: none;
+   border: none;
+   min-width: 24px;
+   min-height: 24px;
+ }
+ 
+ .close-button:hover {
+   box-shadow: none;
+   background: @close-button-hover;
+   transition: all 0.15s ease-in-out;
+   border: none;
+ }
+ 
+ .notification-default-action,
+ .notification-action {
+   padding: 4px;
+   margin: 0;
+   box-shadow: none;
+   background-color: @noti-action-bg;
+   border: 0px @noti-border-color;
+   color: white;
+ }
+ 
+ .notification-default-action:hover,
+ .notification-action:hover {
+   -gtk-icon-effect: none;
+   background: @noti-action-hover;
+ }
+ 
+ .notification-default-action {
+   border-radius: 12px;
+ }
+ 
+ /* When alternative actions are visible */
+ .notification-default-action:not(:only-child) {
+   border-bottom-left-radius: 0px;
+   border-bottom-right-radius: 0px;
+ }
+ 
+ .notification-action {
+   border-radius: 0px;
+   border-top: none;
+   border-right: none;
+ }
+ 
+ /* add bottom border radius to eliminate clipping */
+ .notification-action:first-child {
+   border-bottom-left-radius: 10px;
+ }
+ 
+ .notification-action:last-child {
+   border-bottom-right-radius: 10px;
+   border-right: 1px solid @noti-border-color;
+ }
+ 
+ .image {}
+ 
+ .body-image {
+   margin-top: 6px;
+   background-color: transparent;
+   border-radius: 12px;
+ }
+ 
+ .summary {
+   font-size: 18px;
+   font-weight: bold;
+   background: transparent;
+   color: @sum-fg;
+   text-shadow: none;
+   margin: 0px 0px 2px 0px;
+ }
+ 
+ .time {
+   font-size: 16px;
+   font-weight: bold;
+   background: transparent;
+   color: @time-fg;
+   text-shadow: none;
+   margin-right: 26px;
+ }
+ 
+ .body {
+   font-size: 15px;
+   font-weight: normal;
+   background: transparent;
+   color: @body-fg;
+   text-shadow: none;
+ }
+ 
+ /* The "Notifications" and "Do Not Disturb" text widget */
+ .top-action-title {
+   color: white;
+   text-shadow: none;
+ }
+ 
+ .control-center {
+   background-color: @noti-bg-alt;
+   padding: 10px 10px 0px 10px;
+   border-radius: 10px 0px 0px 10px;
+ }
+ 
+ .control-center-list {
+   background: transparent;
+ }
+ 
+ .floating-notifications {
+   background: transparent;
+ }
+ 
+ /* Window behind control center and on all other monitors */
+ .blank-window {
+   background: transparent;
+ }
+ 
+ /*** Widgets ***/
+ 
+ /* Title widget */
+ .widget-title {
+   margin: 10px 8px 18px 20px;
+   font-size: 24px;
+   font-family: Metropolis medium;
+   font-weight: bolder;
+ }
+ 
+ .widget-title>button {
+   font-size: 16px;
+   color: white;
+   text-shadow: none;
+   background: transparent;
+   border: 1px solid @noti-border-color;
+   box-shadow: none;
+   border-radius: 8px;
+   padding: 4px 12px 4px 12px;
+   margin: 0px 8px 0px 0px;
+ }
+ 
+ .widget-title>button:hover {
+   background: rgba(46, 60, 90, 0.8);
+ }
+
+ /* DND widget */
+ .widget-dnd {
+   margin: 8px;
+   font-size: 1.1rem;
+ }
+ 
+ .widget-dnd>switch {
+   font-size: initial;
+   border-radius: 12px;
+   background: @noti-bg;
+   border: 1px solid @noti-border-color;
+   box-shadow: none;
+ }
+ 
+ .widget-dnd>switch:checked {
+   background: @bg-selected;
+ }
+ 
+ .widget-dnd>switch slider {
+   background: @noti-bg-hover;
+   border-radius: 12px;
+ }
+ 
+ /* Label widget */
+ .widget-label {
+   margin: 8px;
+ }
+ 
+ .widget-label>label {
+   font-size: 1.1rem;
+ }
+ 
+ /* Mpris widget */
+ .widget-mpris {
+   /* The parent to all players */
+   background: transparent;
+ }
+ 
+ .widget-mpris-player {
+   padding: 8px;
+   margin: 8px;
+   background: rgba(24, 30, 46, 0.6);
+ }
+ 
+ .widget-mpris-title {
+   font-weight: bold;
+   font-size: 1.25rem;
+ }
+ 
+ .widget-mpris-subtitle {
+   font-size: 1.1rem;
+ }
+ 
+ /* Volume and Brightness Widget*/
+ 
+ .widget-volume {
+   background-color: transparent;
+   padding: 0px 10px 0px 15px;
+   margin: 6px 8px 0px 8px;
+   border-radius: 30px;
+   font-size: 18px;
+ }
+ 
+ .widget-backlight {
+  background-color: transparent;
+  padding: 0px 10px 0px 15px;
+  margin: 0px 8px 0px 8px;
+  border-radius: 30px;
+  font-size: 18px;
+ }
+ 
+ .KB {
+   padding: 0px 8px 0px 8px;
+   margin: 0px 8px 0px 8px;
+   border-radius: 10;
+ }
+
+.widget-menubar{
+  background: transparent;
+  padding: 0px;
+  box-shadow: none
+}
+
+
+ .widget-menubar>box>.menu-button-bar>button{
+   border: none;
+   background: transparent;
+ }
+
+ .topbar-buttons>button{
+   border: none;
+   background: transparent;
+ }
+ 
+ .widget-buttons-grid{
+   padding: 0px;
+   margin: 12px 12px 16px 16px;
+   border-radius: 12px;
+   background-color: transparent;
+ }
+
+ .widget-buttons-grid:active{
+    padding: 8px;
+    margin: 8px;
+    border-radius: 12px;
+    background-color: #0099ff;
+  }
+ 
+ .widget-buttons-grid>flowbox>flowboxchild>button{
+   background:  rgba(46, 58, 85, 0.6);
+   border-radius: 8px;
+   padding: 14px 27px 14px 24px;
+   font-size: 20px;
+   box-shadow: none;
+ }
+ 
+ .widget-buttons-grid>flowbox>flowboxchild>button:hover {
+   background: rgba(72, 90, 134, 0.6);
+ }
+
+ .widget-buttons-grid>flowbox>flowboxchild>button:active {
+  background: rgba(0, 112, 204, 0.897);
+}
+
+ .widget-buttons-grid>flowbox>flowboxchild>button:checked {
+  /* OnePlus McClaren edition Orange accent */
+  background: rgba(0, 140, 255, 0.897);
+}
+
+.notification-group.collapsed .notification-row:not(:last-child) .notification-action,
+.notification-group.collapsed .notification-row:not(:last-child) .notification-default-action {
+  opacity: 0;
+  background-color: @noti-group-collapsed-hover;
+}
+
+.notification-group.collapsed:hover .notification-row:not(:only-child) .notification {
+  background-color: @noti-group-collapsed-hover;
+  margin: 0px;
+}
+
+.notification-group.collapsed .notification-row:not(:only-child) .notification {
+  background: @noti-group-collapsed;
+}
+
+.notification-group .notification-group-buttons, .notification-group .notification-group-headers {
+  margin: 0px 16px;
+  color: #ffffff;
+}
+
+.notification-group, .notification-group {
+  margin: 0px;
+  opacity: 0.4;
+  background-color: transparent;
+}
+
+.notification-group-headers {
+  margin: 0px;
+  opacity: 0.4;
+  background-color: transparent;
+}
+
+.notification-group .notification-group-headers .notification-group-icon {
+  background: transparent;
+  font-size: 10px;
+  opacity: 0.4;
+}
+
+.notification-group .notification-group-headers .notification-group-header {
+  background: transparent;
+  font-size: 24px;
+}
+.control-center .control-center-list-placeholder {
+  /* The placeholder when there are no notifications */
+  opacity: 0.2;
+}
+
+.notification-group-buttons {
+  margin: 0px;
+  color:#0099ff;
+  opacity: 1;
+}
+
+.blank-window {
+  /* Window behind control center and on all other monitors */
+  background: transparent;
+}
+

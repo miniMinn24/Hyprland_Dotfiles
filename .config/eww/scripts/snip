@@ -1,0 +1,2 @@
+#!/usr/bin/env bash
+grim -g "$(slurp -d)" "$HOME/Pictures/Screenshots/$(date '+%y_%m_%d_%H-%M-%S').png"

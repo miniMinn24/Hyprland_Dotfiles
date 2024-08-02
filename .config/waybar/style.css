@@ -1,0 +1,222 @@
+/*
+__        __          _                
+\ \      / /_ _ _   _| |__   __ _ _ __ 
+ \ \ /\ / / _` | | | | '_ \ / _` | '__|
+  \ V  V / (_| | |_| | |_) | (_| | |   
+   \_/\_/ \__,_|\__, |_.__/ \__,_|_|   
+                |___/       By miniMinn
+*/
+
+@import "themes/dark.css";
+
+
+* {
+    font-family:  Metropolis medium, 'JetBrainsMono Nerd Font Propo';
+    font-size: 13px;
+    font-feature-settings: '"zero", "ss01", "ss02", "ss03", "ss04", "ss05", "cv31"';
+    min-height: 20px;
+  }
+  
+  window#waybar {
+    background-color: @bg;
+  }
+
+  .tooltip {
+    border-radius: 8px;
+    background-color: @bg;
+    color: #0099ff;
+  }
+  
+  #custom-logo {
+    border-right: 0px solid;
+    border-radius: 0px;
+    background-color: transparent;
+    font-family:  Metropolis medium, 'JetBrainsMono Nerd Font Propo';
+    font-size: 16px;
+    color: @fg;
+    padding: 0px 10px 0px 10px;
+    margin: 0px 0px 0px 0px;
+  }
+  
+  #window {
+    border: 0px solid;
+    border-radius: 0px;
+    background-color: transparent;
+    color: @fg;
+    padding: 0px 0px 0px 0px;
+    margin: 0px 0px 0px 0px;
+  }
+
+  window#waybar.empty #window {
+    background-color:transparent;
+    padding: 0px 0px 0px 0px;
+}
+
+  #custom-search {
+    border: 0px solid;
+    border-radius: 15px 0px 0px 15px;
+    background-color: transparent;
+    color: @fg;
+    padding: 0px 5px 0px 5px;
+    margin: 0px 0px 0px 0px;
+  }
+
+
+  #custom-display {
+    border: 0px solid;
+    border-radius: 15px 0px 0px 15px;
+    background-color: transparent;
+    color: @fg;
+    padding: 0px 5px 0px 5px;
+    margin: 0px 0px 0px 0px;
+  }
+
+  #custom-theme {
+    border: 0px solid;
+    border-radius: 15px 0px 0px 15px;
+    background-color: transparent;
+    color: @fg;
+    padding: 0px 5px 0px 5px;
+    margin: 0px 5px 0px 0px;
+  }
+  
+  #workspaces {
+    border: 0px solid;
+    border-radius: 0px;
+    color: @fg;
+    padding: 0px 2px 0px 0px;
+    margin: 0px 2px 0px 0px;
+  }
+  
+  #custom-arch {
+    font-size: 18px;
+    color: @fg;
+  }
+
+  #workspaces button {
+    background: @workspaceunactive;
+    border-radius: 0px;
+    border: 0.1px solid;
+    border-color: @workspaceborder;
+    color: @fg;
+    padding: 0px 5px 0px 5px;
+    margin: 0px;
+    transition-duration: 0.4s;
+  }
+
+  #workspaces button.active {
+    background: @workspaceactive;
+    border-radius: 0px;
+    border-color: transparent;
+    color: @fg2;
+    padding: 0px 5px 0px 5px;
+    margin: 0px;
+    transition-duration: 0s;
+  }
+
+#workspaces button.focused {
+    background-color: @workspaceactive;
+  }
+
+#workspaces button.urgent {
+    background-color: @urgent;
+  }
+  
+  #battery{
+    border: 0px solid;
+    border-radius: 20px;
+    background-color: transparent;
+    color: @fg;
+    padding: 0px 5px 0px 5px;
+    margin: 0px 0px 0px 0px;
+  }
+
+  #tray{
+    border-right: 0px solid;
+    border-radius: 0px;
+    background-color: transparent;
+    color: @fg;
+    padding: 0px 2px 0px 2px;
+    margin: 0px 0px 0px 0px;
+  }
+
+  #custom-lang{
+    border-right: 0px solid;
+    border-radius: 0px;
+    background-color: transparent;
+    color: @fg;
+    padding: 0px 5px 0px 5px;
+    margin: 0px 4px 0px 4px;
+  }
+
+  #backlight{
+    border: 0px solid;
+    border-radius: 20px 0px 0px 20px;
+    background-color: transparent;
+    color: @fg; 
+    padding: 0px 5px 0px 5px;
+    margin: 0px 0px 0px 0px;
+  }
+
+  #pulseaudio {
+    border: 0px solid;
+    border-radius: 20px 0px 0px 20px;
+    background-color: transparent;
+    color: @fg; 
+    padding: 0px 5px 0px 5px;
+    margin: 0px 0px 0px 0px;
+  }
+  
+  #network {
+    border: 0px solid;
+    border-radius: 20px;
+    background-color: transparent;
+    color: @fg;
+    padding: 0px 5px 0px 5px;
+    margin: 0px 0px 0px 0px;
+  }  
+  
+  #clock{
+    border-left: 0px solid;
+    border-radius: 0px;
+    background-color: transparent;
+    color: @fg;
+    padding: 0px 8px 0px 8px;
+    margin: 0px 0px 0px 5px;
+    font-size: 13px
+  }
+
+  #custom-control {
+    border-left: 0px solid;
+    border-radius: 0px;
+    background-color: transparent;
+    color: @fg;
+    padding: 0px 8px 0px 8px;
+    margin: 0px 0px 0px 0px;
+  }
+
+  #workspaces button.active:hover {
+    background: @workspaceactivehover;
+    border-radius: 0px;
+  }
+
+  #workspaces button:hover {
+    background: @workspacehover;
+    border-radius: 0px;
+  }
+
+  #custom-logo:hover,
+  #custom-search:hover,
+  #custom-display:hover,
+  #custom-theme:hover,
+  #clock:hover,
+  #backlight:hover,
+  #pulseaudio:hover,
+  #network:hover,
+  #battery:hover,
+  #custom-control:hover,
+  #custom-notification:hover,
+  #custom-lang:hover {
+    background: @hover;
+    border-radius: 0px;
+  }
