@@ -85,7 +85,7 @@ Hope you like my customization! ✨
 
 
 <details>
-  <summary><b>🖥️ General<b></summary>
+  <summary><b>🖥️ General</b></summary>
 <br>
     
 | Key Binding | Actions |
